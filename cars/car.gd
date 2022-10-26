@@ -84,7 +84,7 @@ func _physics_process(delta):
 	car_mesh.transform.origin.y = lerp(car_mesh.transform.origin.y, ball.transform.origin.y + sphere_offset.y, 0.5)
 	
 	#car_mesh.transform.origin = lerp(car_mesh.transform.origin, ball.transform.origin + sphere_offset, 0.3)
-	var force = -car_mesh.global_transform.basis.z * speed_input * 25
+	var force = -car_mesh.global_transform.basis.z * speed_input * 20
 	ball.add_central_force(force)
 	speed_input *= acceleration
 
