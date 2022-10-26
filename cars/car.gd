@@ -13,7 +13,7 @@ onready var wheel_front_right = $mesh/body/wheel_front_right
 onready var wheels = [wheel_back_left, wheel_back_right,
 					wheel_front_left, wheel_front_right]
 					
-var sphere_offset = Vector3(0, -1, 0)
+var sphere_offset = Vector3(0, -1.5, 0)
 var speed_input = 0
 
 var acceleration = 0.9
@@ -36,9 +36,9 @@ func _process(delta):
 		return
 	# f/b input
 	#speed_input = 0
-	speed_input += Input.get_action_strength("accelerate") * 8
-	speed_input -= Input.get_action_strength("brake") * 0.5
-	speed_input *= acceleration
+	speed_input += Input.get_action_strength("accelerate") * 30
+	speed_input -= Input.get_action_strength("brake") * 10
+	
 	# steer input
 #	rotate_target = lerp(rotate_target, rotate_input, 5 * delta)
 	var rotate_input = 0
@@ -76,16 +76,17 @@ func _process(delta):
 		
 	
 func _physics_process(delta):
-	#car_mesh.transform.origin = ball.transform.origin
+	#car_mesh.transform.origin = ball.transform.origin + sphere_offset
 	
 	# just lerp the y due to trimesh bouncing
-#	car_mesh.transform.origin.x = ball.transform.origin.x + sphere_offset.x
-#	car_mesh.transform.origin.z = ball.transform.origin.z + sphere_offset.z
-#	car_mesh.transform.origin.y = lerp(car_mesh.transform.origin.y, ball.transform.origin.y + sphere_offset.y, 10 * delta)
+	car_mesh.transform.origin.x = ball.transform.origin.x + sphere_offset.x
+	car_mesh.transform.origin.z = ball.transform.origin.z + sphere_offset.z
+	car_mesh.transform.origin.y = lerp(car_mesh.transform.origin.y, ball.transform.origin.y + sphere_offset.y, 0.5)
 	
-	car_mesh.transform.origin = lerp(car_mesh.transform.origin, ball.transform.origin + sphere_offset, 0.3)
-	
-	ball.add_central_force(-car_mesh.global_transform.basis.z * speed_input * 0.85)
+	#car_mesh.transform.origin = lerp(car_mesh.transform.origin, ball.transform.origin + sphere_offset, 0.3)
+	var force = -car_mesh.global_transform.basis.z * speed_input * 25
+	ball.add_central_force(force)
+	speed_input *= acceleration
 
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
