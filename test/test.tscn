@@ -101,6 +101,9 @@ material/0 = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0 )
 shape = SubResource( 9 )
 
+[node name="track_01" parent="." instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="debug_labels" type="VBoxContainer" parent="GUI"]
@@ -155,6 +158,3 @@ __meta__ = {
 }
 
 [node name="onscreen_controls" parent="GUI" instance=ExtResource( 12 )]
-
-[node name="track_01" parent="." instance=ExtResource( 4 )]
-transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
