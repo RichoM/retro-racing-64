@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://tracks/floor.phymat" type="PhysicsMaterial" id=1]
 [ext_resource path="res://tracks/sections/tracks.material" type="Material" id=2]
 
 [sub_resource type="ArrayMesh" id=5]
@@ -18,16 +17,7 @@ surfaces/0 = {
 "vertex_count": 170
 }
 
-[sub_resource type="ConvexPolygonShape" id=6]
-points = PoolVector3Array( 821.613, 0.915254, 21.6134, 821.613, -2.08475, 21.6134, 821.613, 0.915254, -778.386, 21.6133, 0.915254, 821.613, 821.613, -2.08475, -778.386, 21.6133, -2.08475, 821.613, 319.655, 0.915254, -771.652, -778.386, 0.915254, 821.613, 319.655, -2.08475, -771.652, -778.386, -2.08475, 821.613, -64.8393, 0.915254, -740.642, -771.652, 0.915254, 319.656, -64.8393, -2.08475, -740.642, -771.652, -2.08475, 319.656, -347.69, 0.915254, -670.007, -740.642, 0.915254, -64.8392, -347.69, -2.08475, -670.007, -740.642, -2.08475, -64.8392, -544.087, 0.915254, -544.087, -670.007, 0.915254, -347.69, -544.087, -2.08475, -544.087, -670.007, -2.08475, -347.69 )
-
 [node name="track_section_05" type="MeshInstance"]
 transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 mesh = SubResource( 5 )
 material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="."]
-physics_material_override = ExtResource( 1 )
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-shape = SubResource( 6 )
