@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://kenney_prototypetextures/PNG/Green/texture_01.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://tracks/track_09.tscn" type="PackedScene" id=9]
 [ext_resource path="res://tracks/track_05.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tracks/track_07.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/onscreen_controls.tscn" type="PackedScene" id=12]
 [ext_resource path="res://test/test.gd" type="Script" id=13]
 
 [sub_resource type="ProceduralSky" id=2]
@@ -178,3 +179,5 @@ text = "Right"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="onscreen_controls" parent="GUI" instance=ExtResource( 12 )]

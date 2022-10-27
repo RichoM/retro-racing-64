@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ui/onscreencontrols/Sprites/shadedLight/shadedLight25.png" type="Texture" id=1]
+[ext_resource path="res://ui/onscreencontrols/Sprites/lineLight/lineLight23.png" type="Texture" id=2]
+[ext_resource path="res://ui/touch_screen_button.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 150, 150 )
+
+[node name="touch_screen_button" type="AnimatedSprite"]
+position = Vector2( -20, -20 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 3 )
+centered = false
+script = ExtResource( 3 )
+
+[node name="button" type="TouchScreenButton" parent="."]
+position = Vector2( -216, -200 )
+shape = SubResource( 4 )
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="released" from="button" to="." method="_on_button_released"]

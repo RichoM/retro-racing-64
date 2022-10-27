@@ -1,0 +1,124 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://ui/touch_screen_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/onscreencontrols/Sprites/lineLight/lineLight43.png" type="Texture" id=2]
+[ext_resource path="res://ui/onscreencontrols/Sprites/lineLight/lineLight22.png" type="Texture" id=3]
+[ext_resource path="res://ui/onscreencontrols/Sprites/shadedLight/shadedLight45.png" type="Texture" id=4]
+[ext_resource path="res://ui/onscreencontrols/Sprites/lineLight/lineLight47.png" type="Texture" id=5]
+[ext_resource path="res://ui/onscreencontrols/Sprites/shadedLight/shadedLight24.png" type="Texture" id=6]
+[ext_resource path="res://ui/onscreencontrols/Sprites/shadedLight/shadedLight25.png" type="Texture" id=7]
+[ext_resource path="res://ui/onscreencontrols/Sprites/lineLight/lineLight23.png" type="Texture" id=8]
+[ext_resource path="res://ui/onscreencontrols/Sprites/shadedLight/shadedLight49.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="onscreen_controls" type="Node2D"]
+
+[node name="left_button" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 270 )
+frames = SubResource( 14 )
+
+[node name="button" parent="left_button" index="0"]
+passby_press = true
+action = "steer_left"
+
+[node name="right_button" parent="." instance=ExtResource( 1 )]
+position = Vector2( 54, 270 )
+frames = SubResource( 15 )
+
+[node name="button" parent="right_button" index="0"]
+position = Vector2( -3, -200 )
+passby_press = true
+action = "steer_right"
+
+[node name="jump_button" parent="." instance=ExtResource( 1 )]
+position = Vector2( 332, 270 )
+frames = SubResource( 16 )
+
+[node name="button" parent="jump_button" index="0"]
+passby_press = true
+action = "brake"
+
+[node name="shoot_button" parent="." instance=ExtResource( 1 )]
+position = Vector2( 378, 270 )
+frames = SubResource( 17 )
+
+[node name="button" parent="shoot_button" index="0"]
+position = Vector2( -3, -200 )
+passby_press = true
+action = "accelerate"
+
+[editable path="left_button"]
+[editable path="right_button"]
+[editable path="jump_button"]
+[editable path="shoot_button"]
