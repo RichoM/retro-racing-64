@@ -21,7 +21,7 @@ surfaces/0 = {
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -250.162, -1.5, -540.204, -370.246, -1.5, -250.283, -250.162, 1.5, -540.204, -232.304, 1.5, -531.139, 462.694, -1.5, -177.048, -370.246, 1.5, -250.283, -443.5, -1.5, 54.8361, 462.694, 1.5, -177.048, 331.858, -1.5, 367.777, -443.5, 1.5, 54.8361, -468.1, -1.5, 367.777, 331.858, 1.5, 367.777, -468.1, 1.5, 367.777 )
 
-[node name="track_02" type="MeshInstance"]
+[node name="track_section_02" type="MeshInstance"]
 transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
