@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://tracks/sections/track_section_09.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tracks/sections/track_section_03.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tracks/sections/track_section_01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tracks/sections/track_section_04.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tracks/sections/track_section_02.tscn" type="PackedScene" id=5]
+
+[node name="track_01" type="Spatial"]
+
+[node name="track_section_09" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 43.1414, 0, -6.64947 )
+
+[node name="track_section_01" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -8.12444, 0, 0.37053 )
+
+[node name="track_section_03" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -16.1244, 0, 0.37053 )
+
+[node name="track_section_04" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -24.1244, 0, 0.370529 )
+
+[node name="track_section_05" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -32.1244, 0, 0.370529 )
+
+[node name="track_section_10" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.01, 0, 1.50996e-09, 0, 0.01, 0, -1.50996e-09, 0, -0.01, -68.1244, 0, 20.3705 )
+
+[node name="track_section_11" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.01, 0, 1.50996e-09, 0, 0.01, 0, -1.50996e-09, 0, -0.01, -68.1244, 0, 28.3705 )
+
+[node name="track_section_06" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -40.1244, 0, 0.370528 )
+
+[node name="track_section_07" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -48.1244, 0, 0.370528 )
+
+[node name="track_section_02" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -0.124443, 0, 0.370531 )
+
+[node name="track_section_13" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -8.26191, 0, 48.264 )
+
+[node name="track_section_14" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -16.2619, 0, 48.264 )
+
+[node name="track_section_15" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -24.2619, 0, 48.264 )
+
+[node name="track_section_16" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -32.2619, 0, 48.264 )
+
+[node name="track_section_17" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -40.2619, 0, 48.264 )
+
+[node name="track_section_18" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -48.2619, 0, 48.264 )
+
+[node name="track_section_19" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, -0.261913, 0, 48.264 )
+
+[node name="track_section_20" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 47.7381, 0, 48.264 )
+
+[node name="track_section_21" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 39.7381, 0, 48.264 )
+
+[node name="track_section_22" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 31.7381, 0, 48.264 )
+
+[node name="track_section_23" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 23.7381, 0, 48.264 )
+
+[node name="track_section_24" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 15.7381, 0, 48.264 )
+
+[node name="track_section_25" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 7.73809, 0, 48.264 )
+
+[node name="track_section_26" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 55.7381, 0, 48.264 )
+
+[node name="track_section_34" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 63.7381, 0, 48.264 )
+
+[node name="track_section_35" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 71.7381, 0, 48.264 )
+
+[node name="track_section_27" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 87.547, 0, -7.62947 )
+
+[node name="track_section_08" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -62.0584, 0, 6.40153 )
+
+[node name="track_section_12" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -62.1142, 0, 42.2399 )
+
+[node name="track_section_28" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-10, 0, -0.01, 0, 0.01, 0, 0.01, 0, -4.37114e-10, 99.2893, 0, -4.40947 )
+
+[node name="track_section_29" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.00893191, 0, -0.00449677, 0, 0.01, 0, 0.00449677, 0, -0.00893191, 106.346, 0, 9.50987 )
+
+[node name="track_section_36" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.00850499, 0, 0.00525977, 0, 0.01, 0, -0.00525977, 0, -0.00850499, 82.6622, 0, 45.6769 )
+
+[node name="track_section_30" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.00988575, 0, -0.00150726, 0, 0.01, 0, 0.00150726, 0, 0.00988575, 102.751, 0, 21.044 )
+
+[node name="track_section_31" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.00987189, 0, 0.00159554, 0, 0.01, 0, -0.00159554, 0, -0.00987189, 100.331, 0, 28.0252 )
+
+[node name="track_section_32" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.00786752, 0, 0.00617269, 0, 0.01, 0, -0.00617269, 0, -0.00786752, 75.3939, 0, 30.3895 )
+
+[node name="track_section_37" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.0086201, 0, 0.00506892, 0, 0.01, 0, -0.00506892, 0, -0.0086201, 96.7152, 0, 33.5334 )
+
+[node name="track_section_33" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.00784679, 0, -0.00619902, 0, 0.01, 0, 0.00619902, 0, 0.00784679, 69.3357, 0, 34.6551 )
+
+[node name="track_section_38" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.00858522, 0, -0.00512777, 0, 0.01, 0, 0.00512777, 0, 0.00858522, 91.7221, 0, 38.2458 )

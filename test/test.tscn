@@ -1,16 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://kenney_prototypetextures/PNG/Green/texture_01.png" type="Texture" id=2]
 [ext_resource path="res://kenney_prototypetextures/PNG/Dark/texture_01.png" type="Texture" id=3]
-[ext_resource path="res://tracks/loop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tracks/track_01.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tracks/floor.phymat" type="PhysicsMaterial" id=5]
-[ext_resource path="res://tracks/track_section_03.tscn" type="PackedScene" id=6]
-[ext_resource path="res://tracks/track_section_08.tscn" type="PackedScene" id=7]
-[ext_resource path="res://tracks/track_section_02.tscn" type="PackedScene" id=8]
-[ext_resource path="res://tracks/track_section_09.tscn" type="PackedScene" id=9]
-[ext_resource path="res://tracks/track_section_05.tscn" type="PackedScene" id=10]
-[ext_resource path="res://tracks/track_section_07.tscn" type="PackedScene" id=11]
 [ext_resource path="res://ui/onscreen_controls.tscn" type="PackedScene" id=12]
 [ext_resource path="res://test/test.gd" type="Script" id=13]
 
@@ -66,27 +60,6 @@ directional_shadow_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
 
-[node name="track" parent="." instance=ExtResource( 4 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 24.935, 0.01, -17.391 )
-
-[node name="track_11" parent="track" instance=ExtResource( 8 )]
-transform = Transform( -0.00422618, 0, 0.00906308, 0, 0.01, 0, -0.00906308, 0, -0.00422618, 18.902, -1.90735e-06, -70.7761 )
-
-[node name="track_12" parent="track" instance=ExtResource( 6 )]
-transform = Transform( 0.00866025, 0, -0.005, 0, 0.01, 0, 0.005, 0, 0.00866025, 7.29078, 0, -67.396 )
-
-[node name="track_13" parent="track" instance=ExtResource( 10 )]
-transform = Transform( -0.00866025, 0, 0.005, 0, 0.01, 0, -0.005, 0, -0.00866025, -6.67721, 0, -57.2058 )
-
-[node name="track_14" parent="track" instance=ExtResource( 11 )]
-transform = Transform( 0.005, 0, 0.00866025, 0, 0.01, 0, -0.00866025, 0, 0.005, -36.716, 0, -88.6653 )
-
-[node name="track_15" parent="track" instance=ExtResource( 7 )]
-transform = Transform( 0.005, 0, 0.00866025, 0, 0.01, 0, -0.00866025, 0, 0.005, -52.7104, 0, -38.0319 )
-
-[node name="track_16" parent="track" instance=ExtResource( 9 )]
-transform = Transform( 0.005, 0, 0.00866025, 0, 0.01, 0, -0.00866025, 0, 0.005, -74.0331, 0, 28.9582 )
-
 [node name="floor" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 mesh = SubResource( 1 )
@@ -102,13 +75,13 @@ physics_material_override = ExtResource( 5 )
 shape = SubResource( 5 )
 
 [node name="car" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.6545, 1.68632, 1.31134e-06 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.17255, 2.73108, -8.04537 )
 
 [node name="wall" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4869, 2, -25.4105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0541, 2, -37.1132 )
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
@@ -118,13 +91,14 @@ material/0 = SubResource( 7 )
 shape = SubResource( 8 )
 
 [node name="ramp" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.547549, 0.836774, 0, -0.836774, 0.547549, 23.4869, 2.72332, -11.8385 )
+transform = Transform( 1, 0, 0, 0, 0.547549, 0.836774, 0, -0.836774, 0.547549, -13.0541, 2.72332, -23.5412 )
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
 [node name="StaticBody" type="StaticBody" parent="ramp"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ramp/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0 )
 shape = SubResource( 9 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
@@ -181,3 +155,6 @@ __meta__ = {
 }
 
 [node name="onscreen_controls" parent="GUI" instance=ExtResource( 12 )]
+
+[node name="track_01" parent="." instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
