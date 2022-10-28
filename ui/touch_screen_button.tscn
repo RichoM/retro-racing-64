@@ -23,17 +23,16 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 150, 150 )
+extents = Vector2( 100, 100 )
 
 [node name="touch_screen_button" type="AnimatedSprite"]
-position = Vector2( -20, -20 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 3 )
 centered = false
 script = ExtResource( 3 )
 
 [node name="button" type="TouchScreenButton" parent="."]
-position = Vector2( -216, -200 )
+position = Vector2( -113, -113 )
 shape = SubResource( 4 )
 
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]
