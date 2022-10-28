@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/fence_01.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://tracks/track_01.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tracks/Material_001.material" type="Material" id=5]
 [ext_resource path="res://landscape/trees.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/title.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/onscreen_controls.tscn" type="PackedScene" id=12]
 [ext_resource path="res://test/test.gd" type="Script" id=13]
 
@@ -47,6 +48,71 @@ surfaces/0 = {
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 4013
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "camera"
+length = 30.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -12.1335, -0.25, 0, 0.25, 0, -196.045, -0.9, 33.2363, 0.9, -33.2363, -196.045, -0.924304, -17.5255, 0.924304, 17.5255, 229.101, -1.2219, 4.44554, 1.2219, -4.44554, 338.141, -1.33364, 26.9588, 1.33364, -26.9588, 137.133, -1.35863, 69.5398, 1.35863, -69.5398, 41.8607, -0.692438, 3.56898, 0.692438, -3.56898, -12.1335, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4, 7.98719, 14.8, 18.9, 23, 27, 30 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 6.79801, -0.25, 0, 0.25, 0, 7.15536, -0.25, 0, 0.25, 0, 7.15536, -0.25, 0, 0.25, 0, 7.15536, -0.25, 0, 0.25, 0, 7.15536, -0.25, 0, 0.25, 0, 7.15536, -0.25, 0, 0.25, 0, 7.15536, -0.25, 0, 0.25, 0, 6.79801, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4, 7.98719, 14.1, 19.4, 23, 27, 30 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.803731, -0.25, 0, 0.25, 0, -2.48801, -0.25, 0, 0.25, 0, 139.594, -0.25, 0, 0.25, 0, 139.594, -0.25, 0, 0.25, 0, -14.0529, -0.25, 0, 0.25, 0, -75.1814, -0.25, 0, 0.25, 0, -0.285202, -0.25, 0, 0.25, 0, 0.803731, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4, 7.98719, 14.1, 19.4, 23, 27, 30 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0, -12.212, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 7.98719, 14.1, 19.4, 23, 27, 30 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 90, -0.249976, -0.394966, 0.7, 1.10601, 115.864, -0.9, -7.95773, 1.30368, 11.527, 259.742, -1.2698, -12.1399, 0.937586, 8.96381, 307.435, -1.37263, -3.92902, 1.82966, 5.23724, 448.555, -1.35612, -22.6489, 1.73362, 28.9535, 528.366, -0.927513, 17.5401, 0.886359, -16.7618, 434.155, -1.42751, 5.24341, 1.27245, -4.67385, 452.875, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 7.2, 13.5, 19.3, 24.5, 26.6, 30 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0, 4.3677e-07, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.7, 7.98719, 14.2, 20, 23, 27, 30 )
 }
 
 [node name="test" type="Spatial"]
@@ -3992,6 +4058,7 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="debug_labels" type="VBoxContainer" parent="GUI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -4043,10 +4110,41 @@ __meta__ = {
 }
 
 [node name="onscreen_controls" parent="GUI" instance=ExtResource( 12 )]
+visible = false
+
+[node name="title" parent="GUI" instance=ExtResource( 7 )]
+
+[node name="play_button" type="Button" parent="GUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 13.0
+margin_top = 29.0
+margin_right = 183.0
+margin_bottom = 81.0
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="track_start_finish" type="MeshInstance" parent="."]
 transform = Transform( -0.032, 0, -4.52987e-09, 0, 0.024, 0, 4.83187e-09, 0, -0.03, -32.619, 8.368, 1.1 )
 mesh = SubResource( 8 )
 material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera")
+reset_on_save = false
+playback_speed = 0.5
+anims/camera = SubResource( 10 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.741166, -0.142004, 0.656131, 7.45058e-09, 0.977372, 0.211529, -0.671322, -0.156778, 0.724394, 322.788, 7.15536, 37.8251 )
+current = true
+fov = 104.6
+far = 500.0
+
+[connection signal="pressed" from="GUI/play_button" to="." method="_on_play_button_pressed"]
 
 [editable path="track_01"]
