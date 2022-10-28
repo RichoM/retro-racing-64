@@ -16,9 +16,11 @@ func _process(delta):
 
 func _on_play_button_pressed():
 	animation.stop()
+	$menu_music.stop()
 	$GUI/title.hide()
 	$GUI/play_button.hide()
 	$GUI/onscreen_controls.show()
 	$Camera.current = false
 	car.camera.current = true
 	car.engine_sfx.play()
+	$game_music.play()
