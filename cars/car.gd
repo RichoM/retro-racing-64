@@ -35,7 +35,7 @@ var cur_time = 0
 var last_time = 0
 var best_time = INF
 
-signal new_record
+signal new_record(best_time)
 
 
 func rotate_for_display(delta):
@@ -47,6 +47,8 @@ func _ready():
 	ground_ray.add_exception(ball)
 
 func _process(delta):
+	if lap_begin > 0: cur_time = OS.get_ticks_msec() - lap_begin
+	
 	ball_speed = ball.linear_velocity.length()
 		
 	if camera:
@@ -147,7 +149,7 @@ func entered_checkpoint(checkpoint : int, total : int):
 			last_time = OS.get_ticks_msec() - lap_begin
 			if last_time < best_time: 
 				best_time = last_time
-				emit_signal("new_record")
+				emit_signal("new_record", best_time)
 			print("TIME: ", last_time)
 			checkpoints.clear()
 		elif checkpoint <= last_checkpoint or checkpoint - last_checkpoint != 1: 
