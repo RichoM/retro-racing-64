@@ -39,7 +39,7 @@ func _process(delta):
 	if camera:
 		var b : RigidBody = ball
 		camera.h_offset = lerp(camera.h_offset, -rotate_input, 0.5)
-		camera.fov = lerp(50, 100, b.linear_velocity.length() / 50)
+		camera.fov = lerp(50, 100, b.linear_velocity.length() / 60)
 		camera.fov = min(camera.fov, 100)
 	
 	speed_input *= acceleration
