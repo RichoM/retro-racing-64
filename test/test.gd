@@ -12,7 +12,7 @@ func _ready():
 	animation.play("camera")
 	$GUI/main.show()
 	$GUI/game.hide()
-	#$menu_music.play()
+	$menu_music.play()
 
 func _process(delta):
 	show_debug_info()
@@ -47,7 +47,7 @@ func _on_play_button_pressed():
 	$Camera.current = false
 	car.camera.current = true
 	car.engine_sfx.play()
-	#$game_music.play()
+	$game_music.play()
 
 
 func format(duration):
