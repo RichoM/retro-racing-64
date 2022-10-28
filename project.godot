@@ -14,13 +14,16 @@ config/name="Retro Racing 64"
 run/main_scene="res://test/test.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=30
+
 [display]
 
 window/size/width=426
 window/size/height=320
 window/size/test_width=1024
 window/size/test_height=600
-window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
