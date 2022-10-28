@@ -113,7 +113,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -219.293, 0, 174.705 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -145.633, 0, 58.6028 )
 
 [node name="Spatial13" parent="decoration" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1998, 0, 163.132 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -190.388, 0, -51.7168 )
 
 [node name="floor" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

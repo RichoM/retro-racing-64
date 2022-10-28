@@ -20,7 +20,7 @@ var speed_input = 0
 var rotate_input = 0
 
 var acceleration = 0.9
-var steering = 30
+var steering = 35
 var turn_speed = 3.00
 var turn_stop_limit = 0.75
 var body_tilt = 135
@@ -49,7 +49,7 @@ func _process(delta):
 	
 	# f/b input
 	#speed_input = 0
-	speed_input += Input.get_action_strength("accelerate") * 25
+	speed_input += Input.get_action_strength("accelerate") * 35
 	speed_input -= Input.get_action_strength("brake") * 10
 	
 	# steer input
