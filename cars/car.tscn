@@ -141,6 +141,7 @@ material/0 = null
 [node name="camera" type="Camera" parent="mesh"]
 transform = Transform( 1, 0, 0, 0, 0.976826, 0.214036, 0, -0.214036, 0.976826, 0, 2.216, 7.091 )
 current = true
+far = 500.0
 
 [node name="ground_ray" type="RayCast" parent="mesh"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.395937, 0 )

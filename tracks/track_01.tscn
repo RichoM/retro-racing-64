@@ -110,14 +110,8 @@ transform = Transform( 0.00988575, 0, -0.00150726, 0, 0.01, 0, 0.00150726, 0, 0.
 [node name="track_section_31" parent="." instance=ExtResource( 5 )]
 transform = Transform( -0.00987189, 0, 0.00159554, 0, 0.01, 0, -0.00159554, 0, -0.00987189, 100.331, 0, 28.0252 )
 
-[node name="track_section_32" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.00786752, 0, 0.00617269, 0, 0.01, 0, -0.00617269, 0, -0.00786752, 75.3939, 0, 30.3895 )
-
 [node name="track_section_37" parent="." instance=ExtResource( 5 )]
 transform = Transform( -0.0086201, 0, 0.00506892, 0, 0.01, 0, -0.00506892, 0, -0.0086201, 96.7152, 0, 33.5334 )
-
-[node name="track_section_33" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.00784679, 0, -0.00619902, 0, 0.01, 0, 0.00619902, 0, 0.00784679, 69.3357, 0, 34.6551 )
 
 [node name="track_section_38" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.00858522, 0, -0.00512777, 0, 0.01, 0, 0.00512777, 0, 0.00858522, 91.7221, 0, 38.2458 )
