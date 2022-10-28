@@ -150,6 +150,7 @@ enabled = true
 debug_shape_custom_color = Color( 0, 0.976471, 1, 1 )
 
 [node name="ball" type="RigidBody" parent="."]
+collision_mask = 3
 mass = 100.0
 physics_material_override = SubResource( 10 )
 gravity_scale = 3.0

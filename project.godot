@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Car",
+"language": "GDScript",
+"path": "res://cars/car.gd"
+} ]
+_global_script_class_icons={
+"Car": ""
+}
+
 [application]
 
 config/name="Retro Racing 64"

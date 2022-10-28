@@ -1,4 +1,5 @@
 extends Spatial
+class_name Car
 
 onready var car_mesh = $mesh
 onready var ball = $ball
@@ -26,6 +27,17 @@ var turn_speed = 3.00
 var turn_stop_limit = 0.75
 var body_tilt = 135
 
+
+var checkpoints = []
+var laps = 0
+var lap_begin = 0
+var cur_time = 0
+var last_time = 0
+var best_time = INF
+
+signal new_record
+
+
 func rotate_for_display(delta):
 	rotate_object_local(Vector3.UP, 0.5 * delta)
 	for wheel in wheels:
@@ -36,7 +48,7 @@ func _ready():
 
 func _process(delta):
 	ball_speed = ball.linear_velocity.length()
-	
+		
 	if camera:
 		var b : RigidBody = ball
 		camera.h_offset = lerp(camera.h_offset, -rotate_input, 0.5)
@@ -119,3 +131,32 @@ func align_with_y(xform, new_y):
 	xform.basis = xform.basis.orthonormalized()
 	return xform
 		
+
+
+func entered_checkpoint(checkpoint : int, total : int):
+	print("Enter checkpoint: ", checkpoint, "/", total)
+	if checkpoints.size() == 0:
+		if checkpoint != 0:
+			print("Wrong checkpoint!")
+			return
+	else:
+		var last_checkpoint = checkpoints.back()
+		if checkpoint == 0 and last_checkpoint == total - 1:
+			print("Lap end!")
+			laps += 1
+			last_time = OS.get_ticks_msec() - lap_begin
+			if last_time < best_time: 
+				best_time = last_time
+				emit_signal("new_record")
+			print("TIME: ", last_time)
+			checkpoints.clear()
+		elif checkpoint <= last_checkpoint or checkpoint - last_checkpoint != 1: 
+			print("Wrong checkpoint!")
+			return
+	
+	checkpoints.append(checkpoint)
+	if checkpoints.size() == 1:
+		print("Lap begin!")
+		lap_begin = OS.get_ticks_msec()
+	else:
+		print("Checkpoint!")
