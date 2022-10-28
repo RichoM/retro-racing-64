@@ -21,3 +21,4 @@ func _on_play_button_pressed():
 	$GUI/onscreen_controls.show()
 	$Camera.current = false
 	car.camera.current = true
+	car.engine_sfx.play()

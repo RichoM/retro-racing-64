@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://cars/Material_002.material" type="Material" id=1]
 [ext_resource path="res://cars/Material_001.material" type="Material" id=2]
 [ext_resource path="res://cars/car.gd" type="Script" id=3]
 [ext_resource path="res://kenney_prototypetextures/PNG/Orange/texture_01.png" type="Texture" id=4]
+[ext_resource path="res://sfx/engine-loop/engine-loop-1-normalized.wav" type="AudioStream" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "f1_Cube002"
@@ -162,3 +163,9 @@ shape = SubResource( 6 )
 visible = false
 mesh = SubResource( 8 )
 material/0 = SubResource( 9 )
+
+[node name="engine_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -80.0
+pitch_scale = 0.01
+bus = "SFX"

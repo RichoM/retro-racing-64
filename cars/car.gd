@@ -4,6 +4,7 @@ onready var car_mesh = $mesh
 onready var ball = $ball
 onready var ground_ray = $mesh/ground_ray
 onready var camera = $mesh/camera
+onready var engine_sfx = $engine_sfx
 
 onready var wheel_back_left = $mesh/body/wheel_back_left
 onready var wheel_back_right = $mesh/body/wheel_back_right
@@ -41,6 +42,11 @@ func _process(delta):
 		camera.h_offset = lerp(camera.h_offset, -rotate_input, 0.5)
 		camera.fov = lerp(50, 100, b.linear_velocity.length() / 60)
 		camera.fov = min(camera.fov, 100)
+		
+	if engine_sfx:
+		engine_sfx.pitch_scale = lerp(0.01, 1.0, ball_speed / 60)
+		engine_sfx.pitch_scale = min(engine_sfx.pitch_scale, 2)
+		engine_sfx.volume_db = lerp(-20, 0, engine_sfx.pitch_scale/1.5) + 5
 	
 	speed_input *= acceleration
 	
