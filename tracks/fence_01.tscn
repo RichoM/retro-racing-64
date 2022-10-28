@@ -31,5 +31,4 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="fencing_04"]
 
 [node name="CollisionShape" type="CollisionShape" parent="fencing_04/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
