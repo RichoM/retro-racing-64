@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/super-mario-256/SuperMario256.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=10]
+size = 27
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 54
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 52
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="title" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -45.0
+margin_right = -47.0
+margin_bottom = -45.0
+rect_rotation = -7.59094
+rect_scale = Vector2( 1.28283, 1.29868 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="retro" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -51.0
+margin_right = 3.0
+margin_bottom = -30.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=20 freq=4][color=#00aaff]R[/color][color=yellow]e[/color][color=red]t[/color][color=#00ff22]r[/color][color=yellow]o[/color][/wave][/center]"
+text = "Retro"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="racing" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -23.0
+margin_right = 96.0
+margin_bottom = 14.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=50 freq=2][color=red]R[/color][color=#00ff22]a[/color][color=yellow]c[/color][color=#00aaff]i[/color][color=#00ff22]n[/color][color=yellow]g[/color][/wave][/center]"
+text = "Racing"
+scroll_active = false
+
+[node name="64" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = -60.0
+margin_right = 119.0
+margin_bottom = -19.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 11 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=30 freq=2][color=red]6[/color][color=red]4[/color][/wave][/center]"
+text = "64"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
