@@ -46,6 +46,7 @@ func _on_play_button_pressed():
 	car.camera.current = true
 	car.engine_sfx.play()
 	$game_music.play()
+	car.input_enabled = true # TODO(Richo)
 
 
 func format(duration):
@@ -61,9 +62,14 @@ func _on_car_lap_completed(lap_counter, lap_time, total_time):
 	lap_label.show()
 	
 	if lap_counter == total_laps:
-		print("END! ", total_time)
-	else:		
-		lap_completed.text = format(lap_time)
+		car.input_enabled = false
+		lap_completed.text = "FINAL TIME\n" + format(lap_time)
+		lap_completed.show()
+		yield(get_tree().create_timer(2.5), "timeout")
+		lap_completed.hide()
+		get_tree().reload_current_scene() # TODO(Richo): Show leaderboard!
+	else:
+		lap_completed.text = "LAP " + str(lap_counter) + "\n" + format(lap_time)
 		lap_completed.show()
 		yield(get_tree().create_timer(2.5), "timeout")
 		lap_completed.hide()

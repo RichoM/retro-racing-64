@@ -27,6 +27,7 @@ var turn_speed = 3.00
 var turn_stop_limit = 0.75
 var body_tilt = 135
 
+var input_enabled = false
 
 var checkpoints = []
 var laps = 0
@@ -68,6 +69,8 @@ func _process(delta):
 		engine_sfx.volume_db = lerp(-20, 0, engine_sfx.pitch_scale/1.5) + 5
 	
 	speed_input *= acceleration
+	
+	if not input_enabled: return
 	
 	# Can't steer/accelerate when in the air
 	if not ground_ray.is_colliding(): return
