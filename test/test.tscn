@@ -4100,7 +4100,6 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main" type="Control" parent="GUI"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -4128,6 +4127,7 @@ __meta__ = {
 }
 
 [node name="game" type="Control" parent="GUI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
