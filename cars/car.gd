@@ -30,6 +30,7 @@ var body_tilt = 135
 
 var checkpoints = []
 var laps = 0
+var track_begin = 0
 var lap_begin = 0
 var cur_time = 0
 var last_time = 0
@@ -48,7 +49,10 @@ func _ready():
 	ground_ray.add_exception(ball)
 
 func _process(delta):
-	if lap_begin > 0: cur_time = OS.get_ticks_msec() - lap_begin
+	if track_begin > 0: 
+		var now = OS.get_ticks_msec()
+		tot_time = now - track_begin
+		cur_time = now - lap_begin
 	
 	ball_speed = ball.linear_velocity.length()
 		
@@ -150,7 +154,6 @@ func entered_checkpoint(checkpoint : int, total : int):
 			print("Lap end!")
 			laps += 1
 			last_time = now - lap_begin
-			tot_time += last_time
 			if last_time < best_time: 
 				best_time = last_time
 			print("TIME: ", last_time)
@@ -164,5 +167,8 @@ func entered_checkpoint(checkpoint : int, total : int):
 	if checkpoints.size() == 1:
 		print("Lap begin!")
 		lap_begin = now
+		if laps == 0:
+			print("Track begin!")
+			track_begin = now
 	else:
 		print("Checkpoint!")

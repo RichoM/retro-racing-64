@@ -4,9 +4,14 @@ onready var car = $car
 onready var animation = $AnimationPlayer
 
 onready var lap_counter : Label = $GUI/game/left_col/lap_counter
-onready var cur_time : Label = $GUI/game/right_col/cur_time
-onready var last_time : Label = $GUI/game/right_col/last_time
-onready var best_time : Label = $GUI/game/right_col/best_time
+onready var tot_time : Label = $GUI/game/right_col/tot_time
+onready var lap_completed : Label = $GUI/game/lap_completed
+onready var lap1_time : Label = $GUI/game/right_col/lap1_time
+onready var lap2_time : Label = $GUI/game/right_col/lap2_time
+onready var lap3_time : Label = $GUI/game/right_col/lap3_time
+onready var lap_labels = [lap1_time, lap2_time, lap3_time]
+
+var total_laps = 3
 
 func _ready():
 	animation.play("camera")
@@ -18,19 +23,12 @@ func _process(delta):
 	show_debug_info()
 	
 	var player = car
-	if player.cur_time:
-		lap_counter.text = "LAP  " + str(player.laps + 1)
-		cur_time.text = format(player.cur_time)
+	if player.tot_time:
+		lap_counter.text = "LAPS " + str(1 + player.laps) + "/" + str(total_laps)
+		tot_time.text = format(player.tot_time)
 	else:
 		lap_counter.text = ""
-		cur_time.text = ""
-	
-	if player.laps > 0:
-		last_time.text = "LAST " + format(player.last_time)
-		best_time.text = "BEST " + format(player.best_time)
-	else:
-		last_time.text = ""
-		best_time.text = ""
+		tot_time.text = ""
 	
 func show_debug_info():
 	$GUI/game/debug_labels/fps.text = "FPS: " + str(Engine.get_frames_per_second())
@@ -58,5 +56,14 @@ func format(duration):
 
 
 func _on_car_lap_completed(lap_counter, lap_time, total_time):
-	if lap_counter == 3:
-		get_tree().reload_current_scene()
+	var lap_label = lap_labels[lap_counter-1]
+	lap_label.text = str(lap_counter) + ") " + format(lap_time)
+	lap_label.show()
+	
+	if lap_counter == total_laps:
+		print("END! ", total_time)
+	else:		
+		lap_completed.text = format(lap_time)
+		lap_completed.show()
+		yield(get_tree().create_timer(2.5), "timeout")
+		lap_completed.hide()
