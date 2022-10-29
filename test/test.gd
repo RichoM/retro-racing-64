@@ -24,7 +24,7 @@ func _process(delta):
 	
 	var player = car
 	if player.tot_time:
-		lap_counter.text = "LAPS " + str(1 + player.laps) + "/" + str(total_laps)
+		lap_counter.text = "LAP " + str(1 + player.laps) + "/" + str(total_laps)
 		tot_time.text = format(player.tot_time)
 	else:
 		lap_counter.text = ""
