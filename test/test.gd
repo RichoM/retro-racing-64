@@ -73,3 +73,7 @@ func _on_car_lap_completed(lap_counter, lap_time, total_time):
 		lap_completed.show()
 		yield(get_tree().create_timer(2.5), "timeout")
 		lap_completed.hide()
+
+
+func _on_back_button_pressed():
+	get_tree().reload_current_scene()

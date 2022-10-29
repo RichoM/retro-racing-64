@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/fence_01.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://ui/onscreen_controls.tscn" type="PackedScene" id=12]
 [ext_resource path="res://test/test.gd" type="Script" id=13]
 [ext_resource path="res://fonts/tomorrow/Tomorrow-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://fonts/unicons/unicons.1.0.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.121569, 0.686275, 1, 1 )
@@ -44,7 +45,7 @@ points = PoolVector3Array( -500, 0, -500, -500, 0, 500, 500, 0, -500, 500, 0, 50
 font_path = "res://fonts/tomorrow/Tomorrow-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=13]
-size = 25
+size = 22
 outline_size = 1
 outline_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 use_filter = true
@@ -73,6 +74,12 @@ outline_size = 2
 outline_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 use_filter = true
 font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 34
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 15 )
 
 [sub_resource type="ArrayMesh" id=8]
 resource_name = "finish_line_Plane002"
@@ -4100,6 +4107,7 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main" type="Control" parent="GUI"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -4127,7 +4135,6 @@ __meta__ = {
 }
 
 [node name="game" type="Control" parent="GUI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -4193,7 +4200,7 @@ __meta__ = {
 [node name="left_col" type="VBoxContainer" parent="GUI/game"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
+margin_left = 48.0
 margin_top = 6.0
 margin_right = -8.0
 margin_bottom = -6.0
@@ -4202,8 +4209,8 @@ __meta__ = {
 }
 
 [node name="lap_counter" type="Label" parent="GUI/game/left_col"]
-margin_right = 410.0
-margin_bottom = 30.0
+margin_right = 370.0
+margin_bottom = 27.0
 custom_fonts/font = SubResource( 13 )
 text = "LAP 1/3"
 __meta__ = {
@@ -4280,6 +4287,22 @@ custom_fonts/font = SubResource( 16 )
 text = "00:00:00"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_button" type="Button" parent="GUI/game"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 39.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.184314, 0.184314, 0.184314, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 0 )
+custom_fonts/font = SubResource( 17 )
+text = "<"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4372,6 +4395,7 @@ shape = SubResource( 11 )
 
 [connection signal="lap_completed" from="car" to="." method="_on_car_lap_completed"]
 [connection signal="pressed" from="GUI/main/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/game/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint3" to="checkpoints/checkpoint3" method="_on_checkpoint_body_entered"]
