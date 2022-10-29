@@ -4326,7 +4326,7 @@ number = 3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 shape = SubResource( 11 )
 
-[connection signal="new_record" from="car" to="." method="_on_car_new_record"]
+[connection signal="lap_completed" from="car" to="." method="_on_car_lap_completed"]
 [connection signal="pressed" from="GUI/main/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]

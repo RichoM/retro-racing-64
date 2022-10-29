@@ -56,6 +56,7 @@ func format(duration):
 	var m = floor((duration/(1000*60))%60)
 	return "%02d:%02d:%02d" % [m, s, ms]
 
-func _on_car_new_record(new_time):
-	print("NEW RECORD")
-	# TODO(Richo): Show message
+
+func _on_car_lap_completed(lap_counter, lap_time, total_time):
+	if lap_counter == 3:
+		get_tree().reload_current_scene()

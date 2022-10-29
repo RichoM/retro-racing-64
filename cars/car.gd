@@ -34,8 +34,9 @@ var lap_begin = 0
 var cur_time = 0
 var last_time = 0
 var best_time = INF
+var tot_time = 0
 
-signal new_record(best_time)
+signal lap_completed(lap_counter, lap_time, total_time)
 
 
 func rotate_for_display(delta):
@@ -137,6 +138,8 @@ func align_with_y(xform, new_y):
 
 func entered_checkpoint(checkpoint : int, total : int):
 	print("Enter checkpoint: ", checkpoint, "/", total)
+	var now = OS.get_ticks_msec()
+	
 	if checkpoints.size() == 0:
 		if checkpoint != 0:
 			print("Wrong checkpoint!")
@@ -146,11 +149,12 @@ func entered_checkpoint(checkpoint : int, total : int):
 		if checkpoint == 0 and last_checkpoint == total - 1:
 			print("Lap end!")
 			laps += 1
-			last_time = OS.get_ticks_msec() - lap_begin
+			last_time = now - lap_begin
+			tot_time += last_time
 			if last_time < best_time: 
 				best_time = last_time
-				emit_signal("new_record", best_time)
 			print("TIME: ", last_time)
+			emit_signal("lap_completed", laps, last_time, tot_time)
 			checkpoints.clear()
 		elif checkpoint <= last_checkpoint or checkpoint - last_checkpoint != 1: 
 			print("Wrong checkpoint!")
@@ -159,6 +163,6 @@ func entered_checkpoint(checkpoint : int, total : int):
 	checkpoints.append(checkpoint)
 	if checkpoints.size() == 1:
 		print("Lap begin!")
-		lap_begin = OS.get_ticks_msec()
+		lap_begin = now
 	else:
 		print("Checkpoint!")
