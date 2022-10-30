@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/fence_01.tscn" type="PackedScene" id=2]
@@ -14,7 +14,10 @@
 [ext_resource path="res://ui/onscreen_controls.tscn" type="PackedScene" id=12]
 [ext_resource path="res://test/test.gd" type="Script" id=13]
 [ext_resource path="res://fonts/tomorrow/Tomorrow-Regular.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://fonts/unicons/unicons.1.0.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://theme/FlatUI/kenneyUI.tres" type="Theme" id=15]
+[ext_resource path="res://theme/icon_theme.tres" type="Theme" id=16]
+[ext_resource path="res://theme/default_theme.tres" type="Theme" id=17]
+[ext_resource path="res://test/enter_name.gd" type="Script" id=18]
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.121569, 0.686275, 1, 1 )
@@ -74,12 +77,6 @@ outline_size = 2
 outline_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 use_filter = true
 font_data = ExtResource( 14 )
-
-[sub_resource type="DynamicFont" id=17]
-size = 34
-outline_size = 2
-use_filter = true
-font_data = ExtResource( 15 )
 
 [sub_resource type="ArrayMesh" id=8]
 resource_name = "finish_line_Plane002"
@@ -4107,34 +4104,73 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main" type="Control" parent="GUI"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="title" parent="GUI/main" instance=ExtResource( 7 )]
-margin_left = 146.0
-margin_top = 95.0
-margin_right = 146.0
-margin_bottom = 95.0
+margin_left = -43.0
+margin_top = -55.0
+margin_right = -43.0
+margin_bottom = -55.0
 
-[node name="play_button" type="Button" parent="GUI/main"]
+[node name="play_btn" type="Button" parent="GUI/main"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 206.0
-margin_top = 169.0
-margin_right = 376.0
-margin_bottom = 221.0
+margin_left = -2.0
+margin_top = 7.0
+margin_right = 184.0
+margin_bottom = 58.0
+theme = ExtResource( 15 )
 text = "PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="leaderboard_btn" type="Button" parent="GUI/main"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.0
+margin_top = 65.0
+margin_right = 184.324
+margin_bottom = 116.251
+theme = ExtResource( 15 )
+text = "LEADERBOARD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="change_name_btn" type="Button" parent="GUI/main"]
+margin_left = 14.0
+margin_top = 281.0
+margin_right = 209.0
+margin_bottom = 310.0
+theme = ExtResource( 16 )
+text = "U"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="current_name" type="Label" parent="GUI/main/change_name_btn"]
+anchor_bottom = 1.0
+margin_left = 39.0
+margin_right = 193.0
+theme = ExtResource( 17 )
+text = "Richo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="game" type="Control" parent="GUI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -4296,13 +4332,77 @@ margin_left = 6.0
 margin_top = 4.0
 margin_right = 52.0
 margin_bottom = 39.0
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0.184314, 0.184314, 0.184314, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 0 )
-custom_fonts/font = SubResource( 17 )
+theme = ExtResource( 16 )
 text = "<"
-flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter_name" type="Control" parent="GUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+player_name_path = NodePath("Panel/player_name_txt")
+
+[node name="Panel" type="Panel" parent="GUI/enter_name"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 62.0
+margin_top = -89.0
+margin_right = -62.0
+margin_bottom = 89.0
+theme = ExtResource( 15 )
+
+[node name="label" type="Label" parent="GUI/enter_name/Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -57.0
+margin_bottom = -30.0
+theme = ExtResource( 17 )
+text = "Player name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player_name_txt" type="LineEdit" parent="GUI/enter_name/Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -27.0
+margin_right = -8.0
+margin_bottom = 26.4343
+align = 1
+placeholder_text = "Anon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accept_btn" type="Button" parent="GUI/enter_name/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.6621
+margin_top = 33.3745
+margin_right = 55.6621
+margin_bottom = 78.6255
+text = "Accept"
+
+[node name="back_button" type="Button" parent="GUI/enter_name"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 39.0
+theme = ExtResource( 16 )
+text = "<"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4394,8 +4494,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 shape = SubResource( 11 )
 
 [connection signal="lap_completed" from="car" to="." method="_on_car_lap_completed"]
-[connection signal="pressed" from="GUI/main/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/main/play_btn" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/main/leaderboard_btn" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/main/change_name_btn" to="." method="_on_change_name_btn_pressed"]
 [connection signal="pressed" from="GUI/game/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="text_entered" from="GUI/enter_name/Panel/player_name_txt" to="GUI/enter_name" method="_on_player_name_text_entered"]
+[connection signal="pressed" from="GUI/enter_name/Panel/accept_btn" to="GUI/enter_name" method="_on_accept_btn_pressed"]
+[connection signal="pressed" from="GUI/enter_name/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint3" to="checkpoints/checkpoint3" method="_on_checkpoint_body_entered"]
