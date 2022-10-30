@@ -4288,7 +4288,6 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main" type="Control" parent="GUI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -4596,6 +4595,7 @@ __meta__ = {
 }
 
 [node name="leaderboard" type="ColorRect" parent="GUI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.270588 )
@@ -4643,12 +4643,12 @@ __meta__ = {
 }
 
 [node name="indices" type="VBoxContainer" parent="GUI/leaderboard/table"]
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 257.0
 custom_constants/separation = -2
 
 [node name="Label" type="Label" parent="GUI/leaderboard/table/indices"]
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 27.0
 theme = ExtResource( 17 )
 text = "1."
@@ -4656,7 +4656,7 @@ align = 2
 
 [node name="Label2" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 25.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 52.0
 theme = ExtResource( 17 )
 text = "2."
@@ -4664,7 +4664,7 @@ align = 2
 
 [node name="Label3" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 50.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 77.0
 theme = ExtResource( 17 )
 text = "3."
@@ -4672,7 +4672,7 @@ align = 2
 
 [node name="Label4" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 75.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 102.0
 theme = ExtResource( 17 )
 text = "4."
@@ -4680,7 +4680,7 @@ align = 2
 
 [node name="Label5" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 100.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 127.0
 theme = ExtResource( 17 )
 text = "5."
@@ -4688,7 +4688,7 @@ align = 2
 
 [node name="Label6" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 125.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 152.0
 theme = ExtResource( 17 )
 text = "6."
@@ -4696,7 +4696,7 @@ align = 2
 
 [node name="Label7" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 150.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 177.0
 theme = ExtResource( 17 )
 text = "7."
@@ -4704,7 +4704,7 @@ align = 2
 
 [node name="Label8" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 175.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 202.0
 theme = ExtResource( 17 )
 text = "8."
@@ -4712,7 +4712,7 @@ align = 2
 
 [node name="Label9" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 200.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 227.0
 theme = ExtResource( 17 )
 text = "9."
@@ -4720,7 +4720,7 @@ align = 2
 
 [node name="Label10" type="Label" parent="GUI/leaderboard/table/indices"]
 margin_top = 225.0
-margin_right = 29.0
+margin_right = 39.0
 margin_bottom = 252.0
 theme = ExtResource( 17 )
 text = "10."
@@ -4728,14 +4728,14 @@ align = 2
 
 [node name="separator" type="HSeparator" parent="GUI/leaderboard/table"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 33.0
-margin_right = 210.0
+margin_left = 43.0
+margin_right = 215.0
 margin_bottom = 257.0
 size_flags_horizontal = 3
 
 [node name="players" type="VBoxContainer" parent="GUI/leaderboard/table"]
-margin_left = 214.0
-margin_right = 214.0
+margin_left = 219.0
+margin_right = 219.0
 margin_bottom = 257.0
 custom_constants/separation = -2
 
@@ -4800,7 +4800,7 @@ align = 1
 
 [node name="separator2" type="HSeparator" parent="GUI/leaderboard/table"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 218.0
+margin_left = 223.0
 margin_right = 396.0
 margin_bottom = 257.0
 size_flags_horizontal = 3

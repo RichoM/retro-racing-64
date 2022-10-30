@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=3 format=2]
 
-[ext_resource path="res://fonts/tomorrow/Tomorrow-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/cat/CatV_6x12_9.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
-size = 22
+size = 26
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
