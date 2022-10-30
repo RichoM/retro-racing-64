@@ -3,11 +3,11 @@ extends Node
 const LEADERBOARD_ID = "635db2768f40bb11d8cf0253*dl2-5GtWWUeUu7ayP8r1QgF2WIFcLc-EufArRmZlgSCA"
 
 const PC_ID_FILE_PATH = "user://uuid.retroracing64.bin"
-const USER_NAME_FILE_PATH = "user://user_name.retroracing64.bin"
+const PLAYER_NAME_FILE_PATH = "user://player_name.retroracing64.bin"
 const SCORE_FILE_PATH = "user://max_score.retroracing64.bin"
 
 var pc_id
-var user_name = ""
+var player_name = ""
 var max_score = 0
 
 var score = 0
@@ -24,7 +24,7 @@ func _ready():
 	read_pc_id()
 	if pc_id == null:
 		set_pc_id(uuid.v4())
-	read_user_name()
+	read_player_name()
 	read_max_score()
 	fetch_leaderboard()
 
@@ -42,18 +42,18 @@ func set_pc_id(id):
 	file.store_string(pc_id)
 	file.close()
 	
-func read_user_name():
+func read_player_name():
 	var file = File.new()
-	var error = file.open(USER_NAME_FILE_PATH, File.READ)
+	var error = file.open(PLAYER_NAME_FILE_PATH, File.READ)
 	if error == OK:
-		user_name = file.get_as_text()
+		player_name = file.get_as_text()
 	file.close()
 	
-func set_user_name(s):
-	user_name = s
+func set_player_name(s):
+	player_name = s
 	var file = File.new()
-	file.open(USER_NAME_FILE_PATH, File.WRITE)
-	file.store_string(user_name)
+	file.open(PLAYER_NAME_FILE_PATH, File.WRITE)
+	file.store_string(player_name)
 	file.close()
 
 func read_max_score():
@@ -107,7 +107,7 @@ func submit_score_to_leaderboard():
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	
-	var player = pc_id + "@" + user_name.replace("*", "__ASTERISK__")
+	var player = pc_id + "@" + player_name.replace("*", "__ASTERISK__")
 	var query = JSON.print({"player": player, "score": score})
 	var headers = ["Content-Type: application/json"]
 	var url = server_url + LEADERBOARD_ID
@@ -147,7 +147,7 @@ func _on_leaderboard_ready(result, response_code, headers, body):
 			name = name.replace("__ASTERISK__", "*")
 				
 			var score = leaderboard[i]["score"]
-			var is_me = pc_id == id and user_name == name
+			var is_me = pc_id == id and player_name == name
 			leaderboard[i] = {"name": name, "score": score, "me?": is_me}
 	
 	print(leaderboard)
