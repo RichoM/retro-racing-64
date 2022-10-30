@@ -55,8 +55,10 @@ func _on_play_button_pressed():
 	car.camera.current = true
 	car.engine_sfx.play()
 	$game_music.play()
-	car.input_enabled = true # TODO(Richo)
-
+	$track_start_finish/animation.play("race_begin")
+	
+func start_race():
+	car.input_enabled = true
 
 func _on_car_lap_completed(lap_counter, lap_time, total_time):
 	var lap_label = lap_labels[lap_counter-1]
