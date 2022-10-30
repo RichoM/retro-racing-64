@@ -75,6 +75,7 @@ func _on_car_lap_completed(lap_counter, lap_time, total_time):
 		lap_completed.hide()
 		$GUI/game.hide()
 		$GUI/leaderboard.show()
+		$GUI/leaderboard.reload_on_back = true
 	else:
 		lap_completed.text = "LAP " + str(lap_counter) + "\n" + Globals.format_duration(lap_time)
 		lap_completed.show()
@@ -84,6 +85,17 @@ func _on_car_lap_completed(lap_counter, lap_time, total_time):
 
 func _on_back_button_pressed():
 	get_tree().reload_current_scene()
+
+func _on_enter_name_back_button_pressed():
+	$GUI/main.show()
+	$GUI/enter_name.hide()
+
+func _on_leaderboard_back_button_pressed():
+	if $GUI/leaderboard.reload_on_back:
+		get_tree().reload_current_scene()
+	else:
+		$GUI/main.show()
+		$GUI/leaderboard.hide()
 
 
 func _on_change_name_btn_pressed():

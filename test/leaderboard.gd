@@ -7,12 +7,14 @@ onready var players = $table/players
 onready var scores = $table/scores
 
 onready var record = false
+onready var reload_on_back = false
 
 func _ready():
 	Globals.connect("leaderboard_ready", self, "_on_leaderboard_ready")
 	message.hide()
 	
 func update():
+	message.hide()
 	Globals.fetch_leaderboard()
 	if Globals.leaderboard:
 		_on_leaderboard_ready(Globals.leaderboard)
