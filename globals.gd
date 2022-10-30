@@ -152,3 +152,11 @@ func _on_leaderboard_ready(result, response_code, headers, body):
 	
 	print(leaderboard)
 	emit_signal("leaderboard_ready", leaderboard)
+
+
+
+func format_duration(duration):
+	var ms = floor(duration%1000)/10
+	var s = floor((duration/1000)%60)
+	var m = floor((duration/(1000*60))%60)
+	return "%02d:%02d:%02d" % [m, s, ms]

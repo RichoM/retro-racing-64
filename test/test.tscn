@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/fence_01.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://theme/icon_theme.tres" type="Theme" id=16]
 [ext_resource path="res://theme/default_theme.tres" type="Theme" id=17]
 [ext_resource path="res://test/enter_name.gd" type="Script" id=18]
+[ext_resource path="res://test/leaderboard.gd" type="Script" id=19]
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.121569, 0.686275, 1, 1 )
@@ -4104,6 +4105,7 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main" type="Control" parent="GUI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -4407,6 +4409,293 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="leaderboard" type="ColorRect" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.270588 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_button" type="Button" parent="GUI/leaderboard"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 39.0
+theme = ExtResource( 16 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="message" type="Label" parent="GUI/leaderboard"]
+anchor_right = 1.0
+margin_top = 8.0
+margin_bottom = 35.0
+theme = ExtResource( 17 )
+text = "FINAL TIME:   00:00:00"
+align = 1
+valign = 1
+
+[node name="table" type="HBoxContainer" parent="GUI/leaderboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 13.0
+margin_top = 48.0
+margin_right = -13.0
+margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="indices" type="VBoxContainer" parent="GUI/leaderboard/table"]
+margin_right = 29.0
+margin_bottom = 257.0
+custom_constants/separation = -2
+
+[node name="Label" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_right = 29.0
+margin_bottom = 27.0
+theme = ExtResource( 17 )
+text = "1."
+align = 2
+
+[node name="Label2" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 25.0
+margin_right = 29.0
+margin_bottom = 52.0
+theme = ExtResource( 17 )
+text = "2."
+align = 2
+
+[node name="Label3" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 50.0
+margin_right = 29.0
+margin_bottom = 77.0
+theme = ExtResource( 17 )
+text = "3."
+align = 2
+
+[node name="Label4" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 75.0
+margin_right = 29.0
+margin_bottom = 102.0
+theme = ExtResource( 17 )
+text = "4."
+align = 2
+
+[node name="Label5" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 100.0
+margin_right = 29.0
+margin_bottom = 127.0
+theme = ExtResource( 17 )
+text = "5."
+align = 2
+
+[node name="Label6" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 125.0
+margin_right = 29.0
+margin_bottom = 152.0
+theme = ExtResource( 17 )
+text = "6."
+align = 2
+
+[node name="Label7" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 150.0
+margin_right = 29.0
+margin_bottom = 177.0
+theme = ExtResource( 17 )
+text = "7."
+align = 2
+
+[node name="Label8" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 175.0
+margin_right = 29.0
+margin_bottom = 202.0
+theme = ExtResource( 17 )
+text = "8."
+align = 2
+
+[node name="Label9" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 200.0
+margin_right = 29.0
+margin_bottom = 227.0
+theme = ExtResource( 17 )
+text = "9."
+align = 2
+
+[node name="Label10" type="Label" parent="GUI/leaderboard/table/indices"]
+margin_top = 225.0
+margin_right = 29.0
+margin_bottom = 252.0
+theme = ExtResource( 17 )
+text = "10."
+align = 2
+
+[node name="separator" type="HSeparator" parent="GUI/leaderboard/table"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 33.0
+margin_right = 210.0
+margin_bottom = 257.0
+size_flags_horizontal = 3
+
+[node name="players" type="VBoxContainer" parent="GUI/leaderboard/table"]
+margin_left = 214.0
+margin_right = 214.0
+margin_bottom = 257.0
+custom_constants/separation = -2
+
+[node name="Label" type="Label" parent="GUI/leaderboard/table/players"]
+margin_bottom = 27.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label2" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 25.0
+margin_bottom = 52.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label3" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 50.0
+margin_bottom = 77.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label4" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 75.0
+margin_bottom = 102.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label5" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 100.0
+margin_bottom = 127.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label6" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 125.0
+margin_bottom = 152.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label7" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 150.0
+margin_bottom = 177.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label8" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 175.0
+margin_bottom = 202.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label9" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 200.0
+margin_bottom = 227.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="Label10" type="Label" parent="GUI/leaderboard/table/players"]
+margin_top = 225.0
+margin_bottom = 252.0
+theme = ExtResource( 17 )
+align = 1
+
+[node name="separator2" type="HSeparator" parent="GUI/leaderboard/table"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 218.0
+margin_right = 396.0
+margin_bottom = 257.0
+size_flags_horizontal = 3
+
+[node name="scores" type="VBoxContainer" parent="GUI/leaderboard/table"]
+margin_left = 400.0
+margin_right = 400.0
+margin_bottom = 257.0
+custom_constants/separation = -2
+
+[node name="Label" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_bottom = 27.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label2" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 25.0
+margin_bottom = 52.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label3" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 50.0
+margin_bottom = 77.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label4" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 75.0
+margin_bottom = 102.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label5" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 100.0
+margin_bottom = 127.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label6" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 125.0
+margin_bottom = 152.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label7" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 150.0
+margin_bottom = 177.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label8" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 175.0
+margin_bottom = 202.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label9" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 200.0
+margin_bottom = 227.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="Label10" type="Label" parent="GUI/leaderboard/table/scores"]
+margin_top = 225.0
+margin_bottom = 252.0
+theme = ExtResource( 17 )
+align = 2
+
+[node name="loading" type="RichTextLabel" parent="GUI/leaderboard"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -213.0
+margin_top = -14.0
+margin_right = 213.0
+margin_bottom = 14.0
+rect_clip_content = false
+theme = ExtResource( 17 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=75 freq=2]Loading...[/wave][/center]"
+text = "Loading..."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="track_start_finish" type="MeshInstance" parent="."]
 transform = Transform( -0.032, 0, -4.52987e-09, 0, 0.024, 0, 4.83187e-09, 0, -0.03, -32.619, 8.368, 1.1 )
 mesh = SubResource( 8 )
@@ -4495,12 +4784,13 @@ shape = SubResource( 11 )
 
 [connection signal="lap_completed" from="car" to="." method="_on_car_lap_completed"]
 [connection signal="pressed" from="GUI/main/play_btn" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="GUI/main/leaderboard_btn" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/main/leaderboard_btn" to="." method="_on_leaderboard_btn_pressed"]
 [connection signal="pressed" from="GUI/main/change_name_btn" to="." method="_on_change_name_btn_pressed"]
 [connection signal="pressed" from="GUI/game/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="text_entered" from="GUI/enter_name/Panel/player_name_txt" to="GUI/enter_name" method="_on_player_name_text_entered"]
 [connection signal="pressed" from="GUI/enter_name/Panel/accept_btn" to="GUI/enter_name" method="_on_accept_btn_pressed"]
 [connection signal="pressed" from="GUI/enter_name/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="GUI/leaderboard/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint3" to="checkpoints/checkpoint3" method="_on_checkpoint_body_entered"]
