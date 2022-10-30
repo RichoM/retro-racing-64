@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/fence_01.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://sfx/race_begin/countdown-a.ogg" type="AudioStream" id=23]
 [ext_resource path="res://theme/FlatUI/kenneyUI-red.tres" type="Theme" id=24]
 [ext_resource path="res://theme/FlatUI/kenneyUI-green.tres" type="Theme" id=25]
+[ext_resource path="res://theme/FlatUI/kenneyUI.tres" type="Theme" id=26]
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.121569, 0.686275, 1, 1 )
@@ -4563,6 +4564,7 @@ margin_left = 8.0
 margin_top = -27.0
 margin_right = -8.0
 margin_bottom = 26.4343
+theme = ExtResource( 26 )
 align = 1
 placeholder_text = "Anon"
 __meta__ = {
