@@ -6,6 +6,8 @@ onready var indices = $table/indices
 onready var players = $table/players
 onready var scores = $table/scores
 
+onready var record = false
+
 func _ready():
 	Globals.connect("leaderboard_ready", self, "_on_leaderboard_ready")
 	message.hide()
@@ -27,8 +29,7 @@ func submit_time(total_time):
 		Globals.leaderboard = null # Reset leaderboard to force update
 		Globals.set_max_score(Globals.score)
 		message.text = "NEW RECORD!   " + Globals.format_duration(total_time)
-		#$AnimationPlayer.play("highscore")
-		#$sfx.play()
+		record = true
 	else:
 		message.text = "FINAL TIME:   " + Globals.format_duration(total_time)
 	
@@ -57,3 +58,9 @@ func _on_leaderboard_ready(leaderboard):
 			
 func remove_loading_sign():
 	loading.hide()
+
+
+func _on_leaderboard_visibility_changed():
+	if visible and record:
+		$animation.play("new_record")
+		$sfx.play()

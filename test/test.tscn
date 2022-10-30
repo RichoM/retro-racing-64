@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://cars/car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/fence_01.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://theme/default_theme.tres" type="Theme" id=17]
 [ext_resource path="res://test/enter_name.gd" type="Script" id=18]
 [ext_resource path="res://test/leaderboard.gd" type="Script" id=19]
+[ext_resource path="res://sfx/new_record/Ta Da-SoundBible.com-1884170640.wav" type="AudioStream" id=20]
+[ext_resource path="res://fonts/tomorrow/Tomorrow-Medium.ttf" type="DynamicFontData" id=21]
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.121569, 0.686275, 1, 1 )
@@ -78,6 +80,28 @@ outline_size = 2
 outline_color = Color( 0.219608, 0.219608, 0.219608, 1 )
 use_filter = true
 font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 24
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 21 )
+
+[sub_resource type="Animation" id=18]
+resource_name = "new_record"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("message:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
 
 [sub_resource type="ArrayMesh" id=8]
 resource_name = "finish_line_Plane002"
@@ -4431,12 +4455,18 @@ __meta__ = {
 
 [node name="message" type="Label" parent="GUI/leaderboard"]
 anchor_right = 1.0
+margin_left = 45.0
 margin_top = 8.0
-margin_bottom = 35.0
+margin_bottom = 37.0
 theme = ExtResource( 17 )
-text = "FINAL TIME:   00:00:00"
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "NEW RECORD!   00:00:00"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="table" type="HBoxContainer" parent="GUI/leaderboard"]
 anchor_right = 1.0
@@ -4696,6 +4726,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="sfx" type="AudioStreamPlayer" parent="GUI/leaderboard"]
+stream = ExtResource( 20 )
+
+[node name="animation" type="AnimationPlayer" parent="GUI/leaderboard"]
+anims/new_record = SubResource( 18 )
+
 [node name="track_start_finish" type="MeshInstance" parent="."]
 transform = Transform( -0.032, 0, -4.52987e-09, 0, 0.024, 0, 4.83187e-09, 0, -0.03, -32.619, 8.368, 1.1 )
 mesh = SubResource( 8 )
@@ -4790,6 +4826,7 @@ shape = SubResource( 11 )
 [connection signal="text_entered" from="GUI/enter_name/Panel/player_name_txt" to="GUI/enter_name" method="_on_player_name_text_entered"]
 [connection signal="pressed" from="GUI/enter_name/Panel/accept_btn" to="GUI/enter_name" method="_on_accept_btn_pressed"]
 [connection signal="pressed" from="GUI/enter_name/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="visibility_changed" from="GUI/leaderboard" to="GUI/leaderboard" method="_on_leaderboard_visibility_changed"]
 [connection signal="pressed" from="GUI/leaderboard/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="body_entered" from="checkpoints/checkpoint1" to="checkpoints/checkpoint1" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoints/checkpoint2" to="checkpoints/checkpoint2" method="_on_checkpoint_body_entered"]
