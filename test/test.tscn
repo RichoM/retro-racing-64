@@ -87,9 +87,10 @@ use_filter = true
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=17]
-size = 24
+size = 22
 outline_size = 1
 use_filter = true
+extra_spacing_space = 3
 font_data = ExtResource( 21 )
 
 [sub_resource type="Animation" id=18]
@@ -4287,6 +4288,7 @@ transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.01, 0 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main" type="Control" parent="GUI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -4594,7 +4596,6 @@ __meta__ = {
 }
 
 [node name="leaderboard" type="ColorRect" parent="GUI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.270588 )
@@ -4618,11 +4619,12 @@ __meta__ = {
 anchor_right = 1.0
 margin_left = 45.0
 margin_top = 8.0
+margin_right = -14.0
 margin_bottom = 37.0
 theme = ExtResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 17 )
-text = "NEW RECORD!   00:00:00"
+text = "PERSONAL RECORD! 00:00:00"
 align = 1
 valign = 1
 __meta__ = {

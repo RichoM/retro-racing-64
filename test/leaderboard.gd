@@ -27,13 +27,24 @@ func score_to_time(score):
 
 func submit_time(total_time):
 	Globals.score = time_to_score(total_time)
-	if Globals.score > Globals.max_score:
+	
+	var personal_record = Globals.score > Globals.max_score
+	var world_record = Globals.leaderboard != null \
+						&& (len(Globals.leaderboard) == 0 \
+							|| (len(Globals.leaderboard) > 0 \
+								&& Globals.score > int(Globals.leaderboard[0]["score"])))
+	record = personal_record || world_record
+	
+	if record:
 		Globals.leaderboard = null # Reset leaderboard to force update
 		Globals.set_max_score(Globals.score)
-		message.text = "NEW RECORD!   " + Globals.format_duration(total_time)
-		record = true
+	
+	if world_record:
+		message.text = "WORLD RECORD!  " + Globals.format_duration(total_time)
+	elif personal_record:
+		message.text = "PERSONAL RECORD!  " + Globals.format_duration(total_time)
 	else:
-		message.text = "FINAL TIME:   " + Globals.format_duration(total_time)
+		message.text = "FINAL TIME:  " + Globals.format_duration(total_time)
 	
 	message.show()
 	Globals.submit_score_to_leaderboard()
