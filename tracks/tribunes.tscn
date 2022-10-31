@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tracks/Material_002.material" type="Material" id=1]
 [ext_resource path="res://tracks/Material_001.material" type="Material" id=2]
+[ext_resource path="res://audience/audience_1.png" type="Texture" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "tribune_Cube005"
@@ -30,8 +31,830 @@ surfaces/1 = {
 "vertex_count": 206
 }
 
+[sub_resource type="QuadMesh" id=2]
+size = Vector2( 3, 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_vertex_lighting = true
+flags_albedo_tex_force_srgb = true
+flags_do_not_receive_shadows = true
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+albedo_texture = ExtResource( 3 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 0.14
+emission_operator = 0
+emission_on_uv2 = false
+
 [node name="tribunes" type="MeshInstance"]
 transform = Transform( 0.00993313, 0, 0, 0, 0.01, 0, 0, 0, 0.0098083, 0, 0, -1.03 )
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
+
+[node name="audience1" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 190.621, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience2" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -72.2864, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience3" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 794.66, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience4" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 503.073, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience5" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -575.542, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience6" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -838.45, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience8" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -263.091, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience23" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4378.28, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience26" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3774.24, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience27" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4065.83, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience25" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4468.37, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience28" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3864.33, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience29" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4155.92, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience30" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4463.83, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience31" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3802.96, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience32" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4150.67, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience121" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2999.8, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience123" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2374.71, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience125" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2658.18, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience127" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3054.4, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience128" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2393.53, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience129" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2741.24, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience158" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1723.47, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience159" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2015.05, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience160" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1662.09, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience161" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2009.8, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience130" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -870.704, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience131" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -266.666, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience132" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -520.462, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience133" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -866.159, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience134" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -167.499, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience135" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -515.208, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience136" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 201.646, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience137" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 767.893, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience138" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 476.306, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience139" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 168.4, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience140" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 734.087, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience141" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 481.56, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience142" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1613.81, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience143" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2217.85, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience144" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1964.34, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience145" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1618.35, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience146" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2317.31, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience147" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1931.51, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience148" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2648.44, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience150" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2922.81, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience151" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2614.9, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience153" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2966.15, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience149" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3789.71, 450.784, 1572.98 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience152" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4190.68, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience154" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3794.26, 570.999, 1436.72 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience155" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4107.42, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience156" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4504.86, 458.701, 1551.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience157" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4510.11, 578.916, 1415.35 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience33" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4462.98, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience34" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3856.15, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience35" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4150.53, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience36" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4553.07, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience37" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3905.09, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience38" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4240.62, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience39" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4506.83, 1070.14, 923.61 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience40" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3795.47, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience41" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4193.67, 1078.06, 932.646 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience42" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4548.53, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience43" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3887.66, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience44" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -4235.37, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience45" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3481.61, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience46" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2877.57, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience47" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3169.16, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience48" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3571.7, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience49" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2746.53, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience50" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3259.25, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience51" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3477.76, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience52" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2815.28, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience53" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3223.47, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience54" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3685.18, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience55" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2906.29, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience56" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -3254, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience57" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1939.92, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience58" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1280.25, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience59" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1574.63, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience60" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2030.01, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience61" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1423.18, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience62" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1717.56, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience63" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2025.46, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience64" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1391.67, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience65" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1642.72, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience66" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2025.46, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience67" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1323.41, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience68" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1712.3, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience80" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1080.28, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience81" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1392.73, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience82" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 990.187, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience83" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1302.64, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience84" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1049.86, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience85" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1345, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience86" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 994.733, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience87" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1307.89, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience88" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1684.32, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience89" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1996.77, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience90" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1594.23, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience91" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1906.68, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience92" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1598.77, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience93" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1974.75, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience94" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1557.21, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience95" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1881.58, 1194.18, 831.156 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience96" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2826, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience97" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3138.45, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience98" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2735.9, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience99" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3048.36, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience100" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2772.43, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience101" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3053.61, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience102" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2740.45, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience103" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3019.23, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience104" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3430.04, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience105" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3742.49, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience106" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3339.94, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience107" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3652.4, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience108" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3376.47, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience109" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3657.65, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience110" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3310.11, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience111" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3657.65, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience112" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4036.3, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience113" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4348.75, 868.307, 1163.73 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience114" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3946.2, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience115" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4258.66, 957.841, 1052.22 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience116" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3982.73, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience117" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4295.89, 1078.06, 915.96 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience118" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3916.37, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience119" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4229.53, 1194.18, 792.695 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience120" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4581.64, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience122" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4550.24, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience124" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4539.46, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience126" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4554.79, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience69" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -958.546, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience72" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1048.64, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience75" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1044.09, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience78" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1044.09, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience70" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -212.274, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience71" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -150.899, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience73" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -254.05, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience74" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -62.7227, 860.391, 1185.09 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience76" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 162.266, 949.925, 1073.59 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience77" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 241.426, 1070.14, 937.328 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience79" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 166.812, 1186.26, 814.063 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience10" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2227.99, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience16" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2490.9, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience20" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1623.95, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience21" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -1915.54, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience22" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2994.15, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience24" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, -2681.7, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience7" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2639.56, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience9" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2376.65, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience11" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2952.01, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience12" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1873.39, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience13" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 1610.48, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience14" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 2185.84, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience15" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4559.33, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience17" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4056.08, 361.25, 1684.49 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience18" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 3793.17, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="audience19" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 1, 4368.53, 369.167, 1663.12 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
