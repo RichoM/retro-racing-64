@@ -147,6 +147,8 @@ far = 500.0
 [node name="ground_ray" type="RayCast" parent="mesh"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.395937, 0 )
 enabled = true
+collision_mask = 5
+collide_with_areas = true
 debug_shape_custom_color = Color( 0, 0.976471, 1, 1 )
 
 [node name="ball" type="RigidBody" parent="."]

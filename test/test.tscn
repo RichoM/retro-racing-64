@@ -4275,7 +4275,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StaticBody" type="StaticBody" parent="floor"]
+[node name="StaticBody" type="StaticBody" parent="floor" groups=["grass"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="floor/StaticBody"]
 shape = SubResource( 7 )

@@ -49,7 +49,7 @@ func rotate_for_display(delta):
 func _ready():
 	ground_ray.add_exception(ball)
 
-func _process(delta):
+func _process(delta):	
 	if track_begin > 0: 
 		var now = OS.get_ticks_msec()
 		tot_time = now - track_begin
@@ -68,6 +68,11 @@ func _process(delta):
 		engine_sfx.pitch_scale = min(engine_sfx.pitch_scale, 2)
 		engine_sfx.volume_db = lerp(-20, 0, engine_sfx.pitch_scale/1.5) + 5
 	
+	var collider : Node = ground_ray.get_collider()
+	if collider && collider.is_in_group("grass"):
+		acceleration = 0.85
+	else:
+		acceleration = 0.9
 	speed_input *= acceleration
 	
 	if not input_enabled: return
