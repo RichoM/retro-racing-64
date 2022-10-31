@@ -97,21 +97,19 @@ func _process(delta):
 		elif rotate_input < 0:
 			rotate_input += deg2rad(2.5)
 			rotate_input = min(rotate_input, 0)
-		
 	else:
-		rotate_input += deg2rad(steer_left if speed_input >= 0 else steer_right)
-		rotate_input -= deg2rad(steer_right if speed_input >= 0 else steer_left)
+		rotate_input += deg2rad(steer_left)
+		rotate_input -= deg2rad(steer_right)
 		rotate_input = clamp(rotate_input, -1.2, 1.2)
 		
 	# rotate wheels for effect
 	var wheel_rotation = rotate_input * deg2rad(steering)
-	if speed_input < 0: wheel_rotation *= -1
 	wheel_front_right.rotation.z = -wheel_rotation
 	wheel_front_left.rotation.z = -wheel_rotation
 		
 	# rotate car mesh
 	if ball.linear_velocity.length() > turn_stop_limit:
-		var new_rotation = rotate_input * deg2rad(steering)
+		var new_rotation = (rotate_input if speed_input >= 0 else -rotate_input) * deg2rad(steering)
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, new_rotation)
 		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
 		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
