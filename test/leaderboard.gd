@@ -58,7 +58,7 @@ func _on_leaderboard_ready(leaderboard):
 	for i in range(min(10, len(leaderboard))):
 		var user_name = leaderboard[i]["name"]
 		var score = int(leaderboard[i]["score"])
-		players.get_child(i).text = user_name.substr(0, 24)
+		players.get_child(i).text = user_name.substr(0, 22)
 		scores.get_child(i).text = Globals.format_duration(score_to_time(score))
 		
 		var font_color = Color.white
