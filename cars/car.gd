@@ -70,7 +70,7 @@ func _process(delta):
 	
 	var collider : Node = ground_ray.get_collider()
 	if collider && collider.is_in_group("grass"):
-		acceleration = 0.85
+		acceleration = 0.825
 	else:
 		acceleration = 0.9
 	speed_input *= acceleration
