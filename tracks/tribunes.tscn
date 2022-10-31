@@ -33,7 +33,7 @@ surfaces/1 = {
 }
 
 [sub_resource type="QuadMesh" id=2]
-size = Vector2( 3, 2 )
+size = Vector2( 4, 2 )
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
