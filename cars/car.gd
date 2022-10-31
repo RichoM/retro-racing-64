@@ -49,14 +49,14 @@ func rotate_for_display(delta):
 func _ready():
 	ground_ray.add_exception(ball)
 
-func _process(delta):	
+func _process(delta):
 	if track_begin > 0: 
 		var now = OS.get_ticks_msec()
 		tot_time = now - track_begin
 		cur_time = now - lap_begin
 	
 	ball_speed = ball.linear_velocity.length()
-		
+			
 	if camera:
 		var b : RigidBody = ball
 		camera.h_offset = lerp(camera.h_offset, -rotate_input, 0.5)
@@ -86,10 +86,8 @@ func _process(delta):
 	speed_input -= Input.get_action_strength("brake") * 10
 	
 	# steer input
-#	rotate_target = lerp(rotate_target, rotate_input, 5 * delta)
-	#rotate_input = 0
-	var steer_left = Input.get_action_strength("steer_left") * 2.5
-	var steer_right = Input.get_action_strength("steer_right") * 2.5
+	var steer_left = Input.get_action_strength("steer_left") * 3.5
+	var steer_right = Input.get_action_strength("steer_right") * 3.5
 	if steer_left == 0 and steer_right == 0:
 		if rotate_input > 0:
 			rotate_input -= deg2rad(2.5)
