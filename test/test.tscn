@@ -5030,6 +5030,7 @@ bus = "Music"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, 1 )
 collision_layer = 2
 collision_mask = 2
+monitorable = false
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -5044,6 +5045,7 @@ shape = SubResource( 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -137, 0, 144 )
 collision_layer = 2
 collision_mask = 2
+monitorable = false
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -5059,6 +5061,7 @@ shape = SubResource( 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, 144 )
 collision_layer = 2
 collision_mask = 2
+monitorable = false
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -5074,6 +5077,7 @@ shape = SubResource( 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.645, 0, -8 )
 collision_layer = 2
 collision_mask = 2
+monitorable = false
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
