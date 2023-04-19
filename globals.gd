@@ -72,7 +72,8 @@ func set_max_score(score):
 
 
 	
-func fetch_server_url():
+func fetch_server_url(retry=0):
+	if retry >= 3: return
 	if server_url != null:
 		yield(get_tree(), "idle_frame")
 	else:
@@ -87,6 +88,10 @@ func fetch_server_url():
 			var data = body.get_string_from_utf8()
 			server_url = data.strip_edges().trim_suffix("/") + "/leaderboard/"
 			print(server_url)
+		else:
+			print("RETRY", retry+1)
+			fetch_server_url(retry+1)
+			return
 	emit_signal("server_ready", server_url)
 	
 func fetch_leaderboard():
